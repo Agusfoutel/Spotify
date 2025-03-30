@@ -1,0 +1,67 @@
+body {
+    background-color: #000;
+    color: white;
+    overflow: hidden; 
+}
+
+/* Estilos del sidebar */
+.sidebar {
+    position: fixed; /* Fijamos el sidebar */
+    left: 0;
+    top: 56px; 
+    bottom: 0;
+    background-color: #121212;
+    overflow-y: auto; /* Scroll vertical */
+    overflow-x: hidden; /* Evita scroll horizontal */
+    transition: width 0.3s ease;
+    z-index: 1000;
+}
+
+/* Estilos del contenido principal */
+.main-content {
+    margin-left: 350px; 
+    height: calc(100vh - 56px); 
+    overflow-y: auto;
+    background-color: #121212;
+    transition: margin-left 0.3s ease;
+}
+
+/* Estilo de la imagen de playlist */
+.playlist-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+}
+
+/* Media query para modo responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 64px !important;
+    }
+    
+    .main-content {
+        margin-left: 64px !important;
+    }
+    
+    .hide-on-small {
+        display: none;
+    }
+}
+
+/* Estilo de la barra de desplazamiento */
+.sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: #121212;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #333333;
+    border-radius: 4px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: #444444;
+}
